@@ -43,7 +43,8 @@ WITH st AS (
          SELECT distinct on(geom) geom,
                 cod_via, tip_via, nom_via,
                 cod_via_int, tip_via_int, nom_via_int
-         FROM st_int
+         FROM st_int 
+         WHERE ST_GeometryType(geom) = 'ST_Point'
      )
      SELECT * FROM st_int_unique;
 ```
