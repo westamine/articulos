@@ -38,7 +38,7 @@ Podemos inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las m
 gdalinfo ASTGTM_S12W077_dem.tif
 ```
 
-![image](https://user-images.githubusercontent.com/88239150/187311816-9a469a5c-f75e-4168-87af-04813930a32a.png)
+![image](https://user-images.githubusercontent.com/88239150/187316082-41072101-0712-4263-b389-ac67a7b97196.png)
 
 Para generar el mosaico de imagenes utilizaremos el programa `gdalbuildvrt`. Este programa construye un conjunto de datos virtual (VTR) a partir de una lista de conjuntos de datos de entrada. La lista de conjuntos de datos se puede especificar al final de la línea de comando, o colocarse en un **archivo de texto** para listas muy largas.
 
@@ -63,8 +63,16 @@ type lista_archivos.txt
 Con esto, ya estamos listo para generar el mosaico virtual, para ello ejecutar el siguiente comando:
 
 ```
-gdalbuildvrt
+gdalbuildvrt -input_file_list lista_archivos.txt mosaico.vrt
 ```
+
+![image](https://user-images.githubusercontent.com/88239150/187316221-1f49c726-00a5-489e-a8e5-d376ee4b5fde.png)
+
+Podemos comparar las imagenes originales y el mosaico virtual que hemos fusionado.
+
+![image](https://user-images.githubusercontent.com/88239150/187317035-9faf4638-d606-4807-ab16-0a22944b976b.png)
+
+
 
 
 
