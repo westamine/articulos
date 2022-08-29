@@ -23,7 +23,7 @@ Como primer paso debemos guardar todas las imagenes en una carpeta de trabajo
 
 ![image](https://user-images.githubusercontent.com/88239150/187310580-223a2d50-6d87-46ed-b39a-bd4d274d1d1c.png)
 
-Accederemos a esta carpeta utilizando el simbolo del sistema de windows (cmd)
+Acceder a esta carpeta utilizando el simbolo del sistema de windows (cmd)
 
 ```
 >D:
@@ -32,8 +32,11 @@ Accederemos a esta carpeta utilizando el simbolo del sistema de windows (cmd)
 ![image](https://user-images.githubusercontent.com/88239150/187311414-a384a806-f2f0-4fad-be21-17f8d038c03d.png)
 
 
-Inspeccionaremos las imagenes con `gdalinfo` para comprobar que tengan las misma carácteristicas como: El número de bandas (1 porque son DEM), sistemas de referencia, tamaño del pixel, entre otros.
+Se recomienda inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las misma carácteristicas como: El número de bandas (1 porque son DEM), sistemas de referencia, tamaño del pixel, entre otros.
 
 ```
-gdalinfo -
+gdalinfo ASTGTM_S12W077_dem.tif
 ```
+
+![image](https://user-images.githubusercontent.com/88239150/187311816-9a469a5c-f75e-4168-87af-04813930a32a.png)
+
