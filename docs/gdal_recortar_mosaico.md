@@ -29,14 +29,17 @@ Acceder a esta carpeta utilizando el simbolo del sistema de windows (cmd)
 >D:
 >cd <ruta_de_la_carpeta>
 ```
+
 ![image](https://user-images.githubusercontent.com/88239150/187311414-a384a806-f2f0-4fad-be21-17f8d038c03d.png)
 
-
-Se recomienda inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las misma carácteristicas como: El número de bandas (1 porque son DEM), sistemas de referencia, tamaño del pixel, entre otros.
+Podemos inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las misma carácteristicas: Número de bandas (Como son DEM tienen 1 banda), sistemas de referencia, tamaño del pixel, entre otros.
 
 ```
 gdalinfo ASTGTM_S12W077_dem.tif
 ```
 
 ![image](https://user-images.githubusercontent.com/88239150/187311816-9a469a5c-f75e-4168-87af-04813930a32a.png)
+
+Para generar el mosaico de imagenes utilizaremos el programa `gdalbuildvrt` 
+
 
