@@ -40,6 +40,10 @@ gdalinfo ASTGTM_S12W077_dem.tif
 
 ![image](https://user-images.githubusercontent.com/88239150/187311816-9a469a5c-f75e-4168-87af-04813930a32a.png)
 
-Para generar el mosaico de imagenes utilizaremos el programa `gdalbuildvrt` 
+Para generar el mosaico de imagenes utilizaremos el programa `gdalbuildvrt`. Este programa construye un conjunto de datos virtual (VTR) a partir de una lista de conjuntos de datos de entrada. La lista de conjuntos de datos se puede especificar al final de la línea de comando, o colocarse en un archivo de texto para listas muy largas.
+
+Es necesario indicar que `gdalbuildvrt` realiza una serie de comprobaciones para asegurarse de que todos los archivos que se colocarán en el VRT resultante tengan características similares: número de bandas, proyección, interpretación del color. De lo contrario, se omitirán los archivos que no coincidan con las características comunes.
+
+
 
 
