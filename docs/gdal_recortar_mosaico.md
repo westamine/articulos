@@ -50,8 +50,21 @@ Para este ejercicio utilizaremos un archivo de texto con el nombre de los archiv
 dir /b *.tif > lista_archivos.txt
 ```
 
+![image](https://user-images.githubusercontent.com/88239150/187313769-12dbc851-ba9d-4db6-a1fb-2b463642efcb.png)
+
 Verificar que el archivo contenga los nombres de los archivos .tif que formaran el mosaico
 
+```
+type lista_archivos.txt
+```
+
+![image](https://user-images.githubusercontent.com/88239150/187313806-3f39c078-8577-4ddf-a354-cc6633503757.png)
+
+Con esto, ya estamos listo para generar el mosaico virtual, para ello ejecutar el siguiente comando:
+
+```
+gdalbuildvrt
+```
 
 
 
