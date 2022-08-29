@@ -21,7 +21,7 @@ Para el desarrollo de este tutorial se utilizaron las imagenes ASTER GDEM de des
 
 Como primer paso debemos guardar todas las imagenes en una carpeta de trabajo
 
-![image](https://user-images.githubusercontent.com/88239150/187310580-223a2d50-6d87-46ed-b39a-bd4d274d1d1c.png)
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187310580-223a2d50-6d87-46ed-b39a-bd4d274d1d1c.png"/></p>
 
 Acceder a esta carpeta utilizando el simbolo del sistema de windows (cmd)
 
@@ -30,7 +30,7 @@ Acceder a esta carpeta utilizando el simbolo del sistema de windows (cmd)
 >cd <ruta_de_la_carpeta>
 ```
 
-![image](https://user-images.githubusercontent.com/88239150/187311414-a384a806-f2f0-4fad-be21-17f8d038c03d.png)
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187311414-a384a806-f2f0-4fad-be21-17f8d038c03d.png"/></p>
 
 Podemos inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las misma carácteristicas: Número de bandas (Como son DEM tienen 1 banda), sistemas de referencia, tamaño del pixel, entre otros.
 
@@ -38,7 +38,7 @@ Podemos inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las m
 gdalinfo ASTGTM_S12W077_dem.tif
 ```
 
-![image](https://user-images.githubusercontent.com/88239150/187316082-41072101-0712-4263-b389-ac67a7b97196.png)
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187316082-41072101-0712-4263-b389-ac67a7b97196.png"/></p>
 
 Para generar el mosaico de imagenes utilizaremos el programa `gdalbuildvrt`. Este programa construye un conjunto de datos virtual (VTR) a partir de una lista de conjuntos de datos de entrada. La lista de conjuntos de datos se puede especificar al final de la línea de comando, o colocarse en un **archivo de texto** para listas muy largas.
 
@@ -50,7 +50,7 @@ Para este ejercicio utilizaremos un archivo de texto con el nombre de los archiv
 dir /b *.tif > lista_archivos.txt
 ```
 
-![image](https://user-images.githubusercontent.com/88239150/187313769-12dbc851-ba9d-4db6-a1fb-2b463642efcb.png)
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187313769-12dbc851-ba9d-4db6-a1fb-2b463642efcb.png"/></p>
 
 Verificar que el archivo contenga los nombres de los archivos .tif que formaran el mosaico
 
@@ -58,7 +58,7 @@ Verificar que el archivo contenga los nombres de los archivos .tif que formaran 
 type lista_archivos.txt
 ```
 
-![image](https://user-images.githubusercontent.com/88239150/187313806-3f39c078-8577-4ddf-a354-cc6633503757.png)
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187313806-3f39c078-8577-4ddf-a354-cc6633503757.png"/></p>
 
 Con esto, ya estamos listo para generar el mosaico virtual, para ello ejecutar el siguiente comando:
 
@@ -66,11 +66,11 @@ Con esto, ya estamos listo para generar el mosaico virtual, para ello ejecutar e
 gdalbuildvrt -input_file_list lista_archivos.txt mosaico.vrt
 ```
 
-![image](https://user-images.githubusercontent.com/88239150/187316221-1f49c726-00a5-489e-a8e5-d376ee4b5fde.png)
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187316221-1f49c726-00a5-489e-a8e5-d376ee4b5fde.png"/></p>
 
 Podemos comparar las imagenes originales y el mosaico virtual que hemos fusionado.
 
-![image](https://user-images.githubusercontent.com/88239150/187317035-9faf4638-d606-4807-ab16-0a22944b976b.png)
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187317035-9faf4638-d606-4807-ab16-0a22944b976b.png"/></p>
 
 Ahora, con la utilidad `gdalwarp` vamos a recortar el mosasico virtual. El recorte se realizará con la capa de área de influencia (ADI.shp)
 
@@ -78,11 +78,11 @@ Ahora, con la utilidad `gdalwarp` vamos a recortar el mosasico virtual. El recor
 gdalwarp -cutline ADI.shp -crop_to_cutline mosaico.vrt mosaico_adi.tif
 ```
 
-![image](https://user-images.githubusercontent.com/88239150/187318158-889fc819-a7c0-4e5c-a5d7-2a978ae84fd7.png)
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187318158-889fc819-a7c0-4e5c-a5d7-2a978ae84fd7.png"/></p>
 
 Una vez finalizado el proceso, tendremos como resultaod la imagen recortada y en formato TIF
 
-![image](https://user-images.githubusercontent.com/88239150/187318438-8c06bd86-6537-4ab2-bba0-49b9185f575b.png)
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187318438-8c06bd86-6537-4ab2-bba0-49b9185f575b.png"/></p>
 
 ## Referencias
 
