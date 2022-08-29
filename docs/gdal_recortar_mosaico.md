@@ -72,10 +72,24 @@ Podemos comparar las imagenes originales y el mosaico virtual que hemos fusionad
 
 ![image](https://user-images.githubusercontent.com/88239150/187317035-9faf4638-d606-4807-ab16-0a22944b976b.png)
 
+Ahora, con la utilidad `gdalwarp` vamos a recortar el mosasico virtual. El recorte se realizará con la capa de área de influencia (ADI.shp)
 
+```
+gdalwarp -cutline ADI.shp -crop_to_cutline mosaico.vrt mosaico_adi.tif
+```
 
+![image](https://user-images.githubusercontent.com/88239150/187318158-889fc819-a7c0-4e5c-a5d7-2a978ae84fd7.png)
 
+Una vez finalizado el proceso, tendremos como resultaod la imagen recortada y en formato TIF
 
+![image](https://user-images.githubusercontent.com/88239150/187318438-8c06bd86-6537-4ab2-bba0-49b9185f575b.png)
 
+## Referencias
+
+https://gdal.org/programs/gdalbuildvrt.html
+
+https://gdal.org/programs/gdalwarp.html
+
+https://courses.spatialthoughts.com/gdal-tools.html
 
 
