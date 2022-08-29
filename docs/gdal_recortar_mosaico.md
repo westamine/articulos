@@ -15,4 +15,4 @@ A continuación se detallan los motivos para utilizar GDAL:
 
 ## Fuente de datos
 
-Para el desarrollo de este tutorial se utilizaron imagenes ASTER GDEM publicados para descarga de forma gratuita por el Ministerio del Ambiente de Perú. Puedes realizar la descarga del siguiente link: (https://geoservidorperu.minam.gob.pe/geoservidor/download_raster.aspx)
+Para el desarrollo de este tutorial se utilizaron las imagenes ASTER GDEM de descarga de gratuita desde los geoservidores del Ministerio del Ambiente de Perú (MINAM). Puedes realizar la descarga del siguiente [link](https://geoservidorperu.minam.gob.pe/geoservidor/download_raster.aspx)
