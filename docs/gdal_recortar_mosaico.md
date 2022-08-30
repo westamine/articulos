@@ -90,6 +90,4 @@ https://gdal.org/programs/gdalbuildvrt.html
 
 https://gdal.org/programs/gdalwarp.html
 
-https://courses.spatialthoughts.com/gdal-tools.html
-
 
