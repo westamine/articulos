@@ -2,7 +2,7 @@
 
 Hace poco, en un grupo de SIG, leí un post donde preguntaban como recortar un mosaico de gran tamaño de forma eficiente. El usuario indicaba que al tratar de realizar este proceso desde un SIG de escritorio el proceso tardaba horas e incluso días sin ejecutarse.
 
-Existen muchas formas eficientes de abordar este problema, como usar softwares especializados en el procesamiento de imágenes digitales. Sin embargo, en este tutorial abordaremos el uso de la biblioteca GDAL como alternativa de solución a este problema.
+Existen muchas formas eficientes de abordar este problema, como usar softwares especializados en el procesamiento digital de imágenes. Sin embargo, en este tutorial abordaremos el uso de la biblioteca GDAL como alternativa de solución a este problema.
 
 ## ¿Porqué usar GDAL?
 
