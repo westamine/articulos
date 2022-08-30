@@ -1,6 +1,6 @@
 # Recortar un mosaico de imagenes con GDAL
 
-Hace poco en un grupo de SIG lei un post donde preguntaban como recortar un mosaico de gran tamamaño de forma eficiente. El usuario indicaba que al tratar de realizar este proceso desde un SIG de escritorio el proceso tardaba horas e incluso dias sin ejecutarse.
+Hace poco en un grupo de SIG lei un post donde preguntaban como recortar un mosaico de gran tamaño de forma eficiente. El usuario indicaba que al tratar de realizar este proceso desde un SIG de escritorio el proceso tardaba horas e incluso dias sin ejecutarse.
 
 Existen muchas formas eficientes de abordar este problema, como usar softwares especializados en el procesamiento de imagenes satelitales. Sin embargo, en este tutorial abordaremos el uso de la biblioteca GDAL como alternativa de solución a este problema.
 
