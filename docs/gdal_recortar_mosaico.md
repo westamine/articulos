@@ -21,7 +21,7 @@ Para el desarrollo de este tutorial se utilizaron las imagenes ASTER GDEM de des
 
 Como primer paso debemos guardar todas las imagenes en una carpeta de trabajo
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187310580-223a2d50-6d87-46ed-b39a-bd4d274d1d1c.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190855386-b4e57497-47fc-4c64-bc84-481fd6e340f6.png"/></p>
 
 Acceder a esta carpeta utilizando el simbolo del sistema de windows (cmd)
 
@@ -30,15 +30,15 @@ Acceder a esta carpeta utilizando el simbolo del sistema de windows (cmd)
 >cd <ruta_de_la_carpeta>
 ```
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187311414-a384a806-f2f0-4fad-be21-17f8d038c03d.png"/></p>
+<p align="center"><img src = ""/></p>
 
 Podemos inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las misma carácteristicas: Número de bandas (Como son DEM tienen 1 banda), sistemas de referencia, tamaño del pixel, entre otros.
 
 ```
-gdalinfo ASTGTM_S12W077_dem.tif
+gdalinfo S09W078.tif
 ```
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187316082-41072101-0712-4263-b389-ac67a7b97196.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856203-29402f7a-3f09-4869-9b52-d068a262a246.png"/></p>
 
 Para generar el mosaico de imagenes utilizaremos el programa `gdalbuildvrt`. Este programa construye un conjunto de datos virtual (VTR) a partir de una lista de conjuntos de datos de entrada. La lista de conjuntos de datos se puede especificar al final de la línea de comando, o colocarse en un **archivo de texto** para listas muy largas.
 
@@ -47,26 +47,26 @@ Para generar el mosaico de imagenes utilizaremos el programa `gdalbuildvrt`. Est
 Para este ejercicio utilizaremos un archivo de texto con el nombre de los archivos de entrada que formaran el mosaico. Para esto debemos ejecutar, desde el simbolo del sistema, el comando dir con un patron que liste los archivos .tif como se muestra a continuación:
 
 ```
-dir /b *.tif > lista_archivos.txt
+dir /b *.tif > lista_dems.txt
 ```
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187313769-12dbc851-ba9d-4db6-a1fb-2b463642efcb.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856226-27eece55-0468-4412-ad2d-dba8a63385fa.png"/></p>
 
 Verificar que el archivo contenga los nombres de los archivos .tif que formaran el mosaico
 
 ```
-type lista_archivos.txt
+type lista_dems.txt
 ```
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187313806-3f39c078-8577-4ddf-a354-cc6633503757.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856261-86786d96-ff42-41f2-b146-ddcf4fa27943.png"/></p>
 
 Con esto, ya estamos listo para generar el mosaico virtual, para ello ejecutar el siguiente comando:
 
 ```
-gdalbuildvrt -input_file_list lista_archivos.txt mosaico.vrt
+gdalbuildvrt -input_file_list lista_dems.txt mosaico.vrt
 ```
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187316221-1f49c726-00a5-489e-a8e5-d376ee4b5fde.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856284-8667213c-b5b1-4582-a845-734df45b59d8.png"/></p>
 
 Podemos comparar las imagenes originales y el mosaico virtual que hemos fusionado.
 
