@@ -72,7 +72,7 @@ Podemos comparar las imagenes originales y el mosaico virtual que hemos fusionad
 
 <p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856643-cc4cba19-8cee-46da-9f72-793e2ddb8905.png"/></p>
 
-Ahora, con la utilidad `gdalwarp` vamos a recortar el mosasico virtual. El recorte se realizará con la capa de área de influencia (ADI.shp)
+Ahora, con la utilidad `gdalwarp` vamos a recortar el mosasico virtual. El recorte se realizará con la capa del departamento de Ancash.
 
 ```
 gdalwarp -cutline D:\SHP\Ancash.shp -crop_to_cutline mosaico.vrt -dstnodata 9999 mosaico_cut.tif
