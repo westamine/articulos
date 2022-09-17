@@ -30,7 +30,7 @@ Acceder a esta carpeta utilizando el simbolo del sistema de windows (cmd)
 >cd <ruta_de_la_carpeta>
 ```
 
-<p align="center"><img src = ""/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856340-82177579-ff24-4a94-91c6-d3fd701850c6.png"/></p>
 
 Podemos inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las misma carácteristicas: Número de bandas (Como son DEM tienen 1 banda), sistemas de referencia, tamaño del pixel, entre otros.
 
@@ -63,26 +63,26 @@ type lista_dems.txt
 Con esto, ya estamos listo para generar el mosaico virtual, para ello ejecutar el siguiente comando:
 
 ```
-gdalbuildvrt -input_file_list lista_dems.txt mosaico.vrt
+gdalbuildvrt -input_file_list lista_dems.txt -vrtnodata 9999 mosaico.vrt
 ```
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856284-8667213c-b5b1-4582-a845-734df45b59d8.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856437-0ee2eb13-7d49-4b2f-bfe9-29e058b46b48.png"/></p>
 
 Podemos comparar las imagenes originales y el mosaico virtual que hemos fusionado.
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187317035-9faf4638-d606-4807-ab16-0a22944b976b.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856643-cc4cba19-8cee-46da-9f72-793e2ddb8905.png"/></p>
 
 Ahora, con la utilidad `gdalwarp` vamos a recortar el mosasico virtual. El recorte se realizará con la capa de área de influencia (ADI.shp)
 
 ```
-gdalwarp -cutline ADI.shp -crop_to_cutline mosaico.vrt mosaico_adi.tif
+gdalwarp -cutline D:\SHP\Ancash.shp -crop_to_cutline mosaico.vrt -dstnodata 9999 mosaico_cut.tif
 ```
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187318158-889fc819-a7c0-4e5c-a5d7-2a978ae84fd7.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856960-6b534fe7-66e4-4c91-aded-b805cb3267a1.png"/></p>
 
 Una vez finalizado el proceso, tendremos como resultaod la imagen recortada y en formato TIF
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/187318438-8c06bd86-6537-4ab2-bba0-49b9185f575b.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856909-cc7c0208-244f-45d2-bdad-6143e7bd9a85.png"/></p>
 
 ## Referencias
 
