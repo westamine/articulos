@@ -30,7 +30,7 @@ Acceder a esta carpeta utilizando el simbolo del sistema de windows (cmd)
 >cd <ruta_de_la_carpeta>
 ```
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856340-82177579-ff24-4a94-91c6-d3fd701850c6.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856203-29402f7a-3f09-4869-9b52-d068a262a246.png"/></p>
 
 Podemos inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las misma carácteristicas: Número de bandas (Como son DEM tienen 1 banda), sistemas de referencia, tamaño del pixel, entre otros.
 
@@ -38,7 +38,7 @@ Podemos inspeccionar las imagenes con `gdalinfo` para comprobar que tengan las m
 gdalinfo S09W078.tif
 ```
 
-<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856203-29402f7a-3f09-4869-9b52-d068a262a246.png"/></p>
+<p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190857092-66138c42-0cea-4f2d-b5a2-364de4d7d1e7.png"/></p>
 
 Para generar el mosaico de imagenes utilizaremos el programa `gdalbuildvrt`. Este programa construye un conjunto de datos virtual (VTR) a partir de una lista de conjuntos de datos de entrada. La lista de conjuntos de datos se puede especificar al final de la línea de comando, o colocarse en un **archivo de texto** para listas muy largas.
 
