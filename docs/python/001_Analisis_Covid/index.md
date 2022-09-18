@@ -434,7 +434,7 @@ gdf_dis.plot()
 
 
     
-![png](output_14_1.png)
+![png](img/output_14_1.png)
     
 
 
@@ -752,7 +752,7 @@ plt.show()
 
 
     
-![png](output_25_0.png)
+![png](img/output_25_0.png)
     
 
 
@@ -785,7 +785,7 @@ plt.show()
 
 
     
-![png](output_26_0.png)
+![png](img/output_26_0.png)
     
 
 
