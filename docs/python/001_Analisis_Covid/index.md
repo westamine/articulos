@@ -34,11 +34,7 @@ import json
 from owslib.wfs import WebFeatureService
 import matplotlib.pyplot as plt
 import numpy as np
-print('Realizado')
 ```
-
-    Realizado
-    
 
 ### 3.2. Lectura de los datos
 
@@ -81,10 +77,7 @@ df_pob.sample(3)
 ```
 
 
-
-
-<div>
-<table border="1" class="dataframe">
+<table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -134,8 +127,6 @@ df_pob.sample(3)
     </tr>
   </tbody>
 </table>
-</div>
-
 
 
 
@@ -166,8 +157,8 @@ open(file_cov, 'wb').write(response_cov.content)
 df_cov = pd.read_csv(file_cov, sep=';', encoding='UTF-8', dtype={'UBIGEO':str})
 df_cov.sample(3)
 ```
-<div>
-<table border="1" class="dataframe">
+
+<table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -225,7 +216,6 @@ df_cov.sample(3)
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -277,8 +267,7 @@ gdf_dis = gpd.read_file(response_dis)
 gdf_dis.sample(3)
 ```
 
-<div>
-<table border="1" class="dataframe">
+<table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -352,7 +341,6 @@ gdf_dis.sample(3)
     </tr>
   </tbody>
 </table>
-</div>
 
 
 ```python
@@ -375,8 +363,7 @@ df_pob_ubigeo.rename(columns={'Cantidad':'poblacion'}, inplace = True)
 df_pob_ubigeo.head(3)
 ```
 
-<div>
-<table border="1" class="dataframe">
+<table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -402,7 +389,6 @@ df_pob_ubigeo.head(3)
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -419,8 +405,7 @@ df_cov_ubigeo.head(3)
 
 
 
-<div>
-<table border="1" class="dataframe">
+<table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -446,7 +431,6 @@ df_cov_ubigeo.head(3)
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -468,10 +452,7 @@ gdf_dis[['ubigeo','poblacion','fallecidos','geometry']].sample(5)
 ```
 
 
-
-
-<div>
-<table border="1" class="dataframe">
+<table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -519,7 +500,6 @@ gdf_dis[['ubigeo','poblacion','fallecidos','geometry']].sample(5)
     </tr>
   </tbody>
 </table>
-</div>
 
 
 
@@ -536,10 +516,7 @@ gdf_dis[['ubigeo','nombdist','nombprov','nombdep','tasa_mortalidad']].sample(5)
 ```
 
 
-
-
-<div>
-<table border="1" class="dataframe">
+<table class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -593,8 +570,6 @@ gdf_dis[['ubigeo','nombdist','nombprov','nombdep','tasa_mortalidad']].sample(5)
     </tr>
   </tbody>
 </table>
-</div>
-
 
 
 ## 4. Resultados
