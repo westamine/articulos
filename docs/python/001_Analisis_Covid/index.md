@@ -4,7 +4,7 @@
 ## 1. Objetivos
 
 * Determinar las tasa de mortalidad del COVID-19 a nivel distrial.
-* Elaborar un mapa de Mortalidad por COVID-19 en el Perú
+* Elaborar un mapa de Mortalidad por COVID-19.
 
 ## 2. Fuente de datos
 
@@ -42,7 +42,7 @@ print('Realizado')
 
 ### 3.2. Lectura de los datos
 
-Todos los datos descargadoa seran convertidos en DataFrame. Comenzaremos con los archivos de descarga directa (se descagran en formato csv)
+Todos los datos descargados seran convertidos en DataFrame. Comenzaremos con los archivos de descarga directa (se descargan en formato csv)
 
 * Agregar encabezados de página para evitar rechazos a las solicitudes:
 
@@ -55,16 +55,9 @@ hdr = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) ' +
 hdr
 ```
 
-
-
-
-    {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-
-
-
 #### 3.2.1. Obtener población
 
-Seguir los siguientes pasos:
+Realizar los siguientes pasos:
 * Tener la URL de descarga
 * Realizar la solicitud a la URL
 * Descargar los datos localmente (en la PC) y almacenar el contenido en una variable
@@ -163,18 +156,13 @@ df_pob.sample(3)
 # dimension (filas y columnas):
 df_pob.shape
 ```
-
-
-
-
-    (123684, 8)
+(123684, 8)
 
 
 
 #### 3.2.2. Obtener fallecimientos por COVID-19
 
-Repetiremos los pasos del puntos 3.2.1
-
+Repetir los pasos del puntos 3.2.1
 
 ```python
 # Covid: Data en formato CSV de descarga directa
@@ -191,9 +179,6 @@ open(file_cov, 'wb').write(response_cov.content)
 df_cov = pd.read_csv(file_cov, sep=';', encoding='UTF-8', dtype={'UBIGEO':str})
 df_cov.sample(3)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -271,16 +256,11 @@ df_cov.sample(3)
 
 
 
-
 ```python
 # dimension (filas y columnas):
 df_cov.shape
 ```
-
-
-
-
-    (216287, 10)
+(216287, 10)
 
 
 
@@ -323,9 +303,6 @@ response_dis = requests.Request('GET', url_dis, params=params).prepare().url
 gdf_dis = gpd.read_file(response_dis)
 gdf_dis.sample(3)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -418,25 +395,12 @@ gdf_dis.sample(3)
 </div>
 
 
-
-
 ```python
 # Plotear distritos
 gdf_dis.plot()
 ```
-
-
-
-
-    <AxesSubplot:>
-
-
-
-
     
 ![png](img/output_14_1.png)
-    
-
 
 ### 3.3. Resumir datos a nivel de distrito (ubigeo)
 
@@ -450,9 +414,6 @@ df_pob_ubigeo = pd.DataFrame(df_pob.groupby(['ubigeo_inei'])['Cantidad'].sum())
 df_pob_ubigeo.rename(columns={'Cantidad':'poblacion'}, inplace = True)
 df_pob_ubigeo.head(3)
 ```
-
-
-
 
 <div>
 <style scoped>
@@ -730,7 +691,7 @@ gdf_dis[['ubigeo','nombdist','nombprov','nombdep','tasa_mortalidad']].sample(5)
 
 ## 4. Resultados
 
-Para visualizar los resultados utilizaremos  Histogramas y un mapa graduado de la tasa de Mortalidad
+Para visualizar los resultados utilizaremos un Histograma y un mapa graduado de la tasa de Mortalidad
 
 
 ```python
