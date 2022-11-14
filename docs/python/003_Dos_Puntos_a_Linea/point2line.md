@@ -113,4 +113,5 @@ geoDf.to_file('out/gis.gpkg', layer='line_distance', driver='GPKG')
 
 * **Paso 9.** Verificar desde QGIS
 
+![image](https://user-images.githubusercontent.com/88239150/201790107-e2c268c0-d224-45c6-9256-efb54f378a52.png)
 
