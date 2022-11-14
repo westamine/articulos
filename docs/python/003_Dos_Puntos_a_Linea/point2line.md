@@ -104,3 +104,13 @@ geoDf.head()
 ``` 
 
 ![image](https://user-images.githubusercontent.com/88239150/201788477-20eb7e05-4200-427e-9322-c13e96edc2b1.png)
+
+* **Paso 8.** Exportar los resultados
+
+```python
+geoDf.to_file('out/gis.gpkg', layer='line_distance', driver='GPKG')
+```
+
+* **Paso 9.** Verificar desde QGIS
+
+
