@@ -69,5 +69,38 @@ dfMerge['geometry'] = dfMerge.apply(lambda row: funLineString(row['lon_org'],
                                     axis=1)
 ```
 
-* **Paso 7.** Calculamos la longitud, que sería la distancia entre ambos puntos.
+Visualizar los resultados:
 
+```python
+dfMerge.head()
+```
+
+![image](https://user-images.githubusercontent.com/88239150/201787448-99ac1679-fc8b-4c03-aa2e-9f924571d3b6.png)
+
+* **Paso 7.** Convertir DataFrame a GeoDataFrame.
+
+```pytho
+ngeoDf = gpd.GeoDataFrame(dfMerge, geometry=dfMerge.geometry, crs='EPSG:4326')
+```
+
+Visualizar resultados:
+
+```python
+geoDf.head()
+``` 
+
+![image](https://user-images.githubusercontent.com/88239150/201787946-9a3c798f-1e6a-4003-aae0-64ad2476d552.png)
+
+* **Paso 7.** Calculamos la longitud, que es la distancia entre ambos puntos. No olvidar reproyectar la capa
+
+```python
+geoDf['distancia'] = geoDf.geometry.to_crs(32718).length
+```
+
+Visualizar el resultado
+
+```python
+geoDf.head()
+``` 
+
+![image](https://user-images.githubusercontent.com/88239150/201788477-20eb7e05-4200-427e-9322-c13e96edc2b1.png)
