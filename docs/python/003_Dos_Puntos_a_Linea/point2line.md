@@ -52,9 +52,11 @@ dfMerge.head()
 
 ![image](https://user-images.githubusercontent.com/88239150/201786009-e85a65da-d839-496c-9147-cb2792e7ba00.png)
 
-* **Paso 5*.** Funcion para crear un objeto Punto Shapely
+* **Paso 5.** Funcion para crear un objeto LineString Shapely a partir de un par de coordenadas.
 
-* **Paso 6.** Funcion para crear un objeto LineString Shapely
+```python
+funLineString = lambda x_org, y_org, x_dpz, y_dpz: LineString([(x_org, y_org), (x_dpz, y_dpz)])
+```
 
 * **Paso 7.** Calculamos la longitud, que sería la distancia entre ambos puntos.
 
