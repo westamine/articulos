@@ -40,8 +40,17 @@ dfDpz.head(3)
 
 ![image](https://user-images.githubusercontent.com/88239150/201785598-1c4505c2-28bb-492e-9060-72d7e3faf34c.png)
 
+* **Paso 4.** Unir los dataframe por el campo `id`
 
-* **Paso 4.** Unir los dataframe por el campo ID
+```python
+# Merge: Unir dataframes
+dfMerge = dfOrg.merge(dfDpz, on='id', how='left', suffixes=('_org', '_dpz'))
+
+# Visualizar resultados
+dfMerge.head()
+```
+
+![image](https://user-images.githubusercontent.com/88239150/201786009-e85a65da-d839-496c-9147-cb2792e7ba00.png)
 
 * **Paso 5*.** Funcion para crear un objeto Punto Shapely
 
