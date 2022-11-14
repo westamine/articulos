@@ -91,7 +91,7 @@ geoDf.head()
 
 ![image](https://user-images.githubusercontent.com/88239150/201787946-9a3c798f-1e6a-4003-aae0-64ad2476d552.png)
 
-* **Paso 7.** Calculamos la longitud, que es la distancia entre ambos puntos. No olvidar reproyectar la capa
+* **Paso 8.** Calculamos la longitud, que es la distancia entre ambos puntos. No olvidar reproyectar la capa
 
 ```python
 geoDf['distancia'] = geoDf.geometry.to_crs(32718).length
@@ -105,13 +105,13 @@ geoDf.head()
 
 ![image](https://user-images.githubusercontent.com/88239150/201788477-20eb7e05-4200-427e-9322-c13e96edc2b1.png)
 
-* **Paso 8.** Exportar los resultados
+* **Paso 9.** Exportar los resultados
 
 ```python
 geoDf.to_file('out/gis.gpkg', layer='line_distance', driver='GPKG')
 ```
 
-* **Paso 9.** Verificar desde QGIS
+* **Paso 10.** Verificar desde QGIS
 
 ![image](https://user-images.githubusercontent.com/88239150/201790107-e2c268c0-d224-45c6-9256-efb54f378a52.png)
 
