@@ -55,7 +55,18 @@ dfMerge.head()
 * **Paso 5.** Funcion para crear un objeto LineString Shapely a partir de un par de coordenadas.
 
 ```python
-funLineString = lambda x_org, y_org, x_dpz, y_dpz: LineString([(x_org, y_org), (x_dpz, y_dpz)])
+funLineString = lambda lon_org, lat_org, lon_dpz, lat_dpz: LineString([(lon_org, lat_org), (lon_dpz, lat_dpz)])
+```
+
+* **Paso 6.** Aplicar la función al dataframe
+
+```python
+dfMerge['geometry'] = dfMerge.apply(lambda row: funLineString(row['lon_org'],
+                                                              row['lat_org'],
+                                                              row['lon_dpz'], 
+                                                              row['lat_dpz']
+                                                             ),                                    
+                                    axis=1)
 ```
 
 * **Paso 7.** Calculamos la longitud, que sería la distancia entre ambos puntos.
