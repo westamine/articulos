@@ -14,12 +14,32 @@ import os
 * **Paso 2.** Especificar la ruta de los archivos csv
 
 ```python
-# Ruta de los archivos csv
 original = 'data/original.csv'
-desplazado = 'data/deplazado.csv'
+desplazado = 'data/desplazado.csv'
 ```
 
 * **Paso 3.** Convertir a dataframe
+
+```python
+dfOrg = pd.read_csv(original, sep=';')
+dfDpz = pd.read_csv(desplazado, sep=';')
+```
+
+Visualizamos los archivos:
+
+```python
+dfOrg.head(3)
+```
+
+![image](https://user-images.githubusercontent.com/88239150/201785553-b7868061-b7fe-43a7-bde1-d35f1d1190e3.png)
+
+
+```python
+dfDpz.head(3)
+```
+
+![image](https://user-images.githubusercontent.com/88239150/201785598-1c4505c2-28bb-492e-9060-72d7e3faf34c.png)
+
 
 * **Paso 4.** Unir los dataframe por el campo ID
 
