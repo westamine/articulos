@@ -1,6 +1,6 @@
 # Crear Linea a partir de 2 puntos
 
-Para este ejemplo, necesitamos calcular la distancia de desplazamiento entre diferentes puntos. Contamos con 2 bases, original y desplazado, teniendo llave el campo ID.
+Para este ejemplo, necesitamos calcular la distancia de desplazamiento entre diferentes puntos. Contamos con 2 bases: original y desplazado, teniendo como llave el campo **ID**.
 
 * **Paso 1.**: Importar las librerias a utilizar
 
