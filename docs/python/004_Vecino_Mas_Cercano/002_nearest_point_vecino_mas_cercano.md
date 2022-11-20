@@ -484,19 +484,6 @@ dfColToCom[['geometry_col', 'geometry_com']].head()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -595,21 +582,6 @@ type(gdfColToCom)
 
     geopandas.geodataframe.GeoDataFrame
 
-
-
-
-```python
-gdfComisariasIca.bounds.min().astype(int)
-```
-
-
-
-
-    minx     402142
-    miny    8413811
-    maxx     402142
-    maxy    8413811
-    dtype: int32
 
 
 
