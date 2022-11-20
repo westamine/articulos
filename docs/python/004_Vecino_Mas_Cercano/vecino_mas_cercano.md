@@ -657,4 +657,4 @@ ax.set_facecolor('black')
 
 * Documentación [Geopandas](https://geopandas.org/en/stable/index.html)
 * Documentación [Shapely](https://shapely.readthedocs.io/en/stable/manual.html)
-* Curso [Automating GIS-processes (University of Helsinki)](https://autogis-site.readthedocs.io/en/latest/index.html)
+* Automating GIS-processes (University of Helsinki)
