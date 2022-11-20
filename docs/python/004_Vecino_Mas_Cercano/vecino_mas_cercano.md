@@ -25,11 +25,7 @@ import pandas as pd
 import geopandas as gpd
 from shapely.ops import nearest_points
 from shapely.geometry import LineString, Point
-print('Realizado')
 ```
-
-    Realizado
-    
 
 Leer los conjuntos de datos que utilizaremos. Las comisarias se encuentran en formato Shapefile y las instituciones educativas en valores separador por coma (csv).
 
@@ -40,13 +36,7 @@ gdfComisarias = gpd.read_file('data/comisarias_peru.shp')
 
 # Lectura de colegios
 dfColegios = pd.read_csv('data/Padron_web.csv', encoding='UTF-8', sep=';', low_memory=False)
-
-print('Realizado')
 ```
-
-    Realizado
-    
-
 
 ```python
 # Visualizar comisarias
@@ -303,11 +293,7 @@ Transformar las capas a SRC Proyectado WGS84 Zona 18 Sur (**EPSG:32718**)
 ```python
 gdfComisariasIca = gdfComisariasIca.to_crs(epsg=32718)
 gdfColegiosIca = gdfColegiosIca.to_crs(epsg=32718)
-print('Realizado')
 ```
-
-    Realizado
-    
 
 
 ```python
@@ -361,11 +347,7 @@ def vecino_mas_cercano(gdf_base, gdf_vecino, id_vecino):
     id_vecino_cercano = gdf_vecino_cercano[id_vecino].values[0]
     
     return id_vecino_cercano
-print('Realizado')
 ```
-
-    Realizado
-    
 
 Ejecutar la función para calcular el vecino mas cercano
 
@@ -375,11 +357,7 @@ gdfColegiosIca['id_vecino'] = gdfColegiosIca.apply(vecino_mas_cercano,
                                                    gdf_vecino=gdfComisariasIca,
                                                    id_vecino='id',
                                                    axis=1)
-print('Realizado')
 ```
-
-    Realizado
-    
 
 Visualizar los resultados
 
@@ -456,12 +434,7 @@ dfColToCom = gdfColegiosIca.merge(gdfComisariasIca[['id','geometry']], how='left
                                       left_on='id_vecino', right_on='id',
                                       suffixes=('_col', '_com')
                                      )
-print('Realizado')
 ```
-
-    Realizado
-    
-
 
 ```python
 dfColToCom[['geometry_col', 'geometry_com']].head()
@@ -530,11 +503,7 @@ Ahora, vamos a crear una función que genere una geometría **Shapely LineString
 
 ```python
 crear_linea = lambda p1, p2: LineString([p1, p2])
-print('Realizado')
 ```
-
-    Realizado
-    
 
 Y Ahora crearemos una nueva capa de líneas que une los colegios con las comisarias
 
@@ -544,12 +513,8 @@ cols=['CODLOCAL','id_vecino','geometry_col','geometry_com']
 dfColToCom['geometry'] = dfColToCom[cols].apply(lambda row: crear_linea(row['geometry_col']
                                                                         , row['geometry_com'])
                                                 , axis=1)
-print('Realizado')
 ```
-
-    Realizado
     
-
 Y ahora vamos convertir este DataFrame en GeodataFrame tomando como geometría el campo `geometry`
 
 
