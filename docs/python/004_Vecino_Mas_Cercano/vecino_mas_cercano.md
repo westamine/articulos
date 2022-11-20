@@ -335,7 +335,7 @@ La función **nearest_points** retorna una tupla con el par de puntos (**origen,
 def vecino_mas_cercano(gdf_base, gdf_vecino, campo_retorno_vecino):
     '''Funcion que calcula el vecino mas cercano entre GeoDataFrames'''
     
-    # Devolver la union de todas la geometrias como Multipuntos
+    # Devolver la union de todas la geometrias de destino como Multipuntos
     geometrias_vecinos_multipuntos = gdf_vecino['geometry'].unary_union
     
     # Encontrar la tupla del par de puntos mas cercanos entre sí
