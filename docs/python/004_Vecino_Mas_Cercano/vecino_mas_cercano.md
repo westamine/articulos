@@ -1,6 +1,6 @@
 # Análisis de Vecino mas Cercano
 
-Los SIG nos permiten analizar las relaciones espaciales entre elementos. Uno de estos análisis es identificar que objetos espaciales estan mas cerca uno de otro. En este tutorial vamos a replicar esta herramienta utilizando Python
+Los SIG nos permiten analizar las relaciones espaciales que existen en la información geográfica . Uno de estos análisis es identificar que objetos espaciales están mas cerca uno de otro. En este tutorial vamos a replicar esta herramienta utilizando Python y sus librerías geopandas y shapely.
 
 ## Objetivos
 
