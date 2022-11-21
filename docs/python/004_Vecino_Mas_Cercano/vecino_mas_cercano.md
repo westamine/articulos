@@ -582,7 +582,7 @@ ax.set_facecolor('black')
     
 
 
-### Elaborador por:
+### Elaborado por:
 
 * **Autor**: Charlie Lopez Rengifo
 * **Correo**: chlopezgis@gmail.com
