@@ -556,17 +556,17 @@ ax = gdfColToCom.plot(column='distancia'
                       , lw=0.7
                      )
 
-ax = gdfColegiosIca.plot(ax=ax
-                         , color='white'
-                         , markersize=5
-                         , alpha=0.7
+gdfColegiosIca.plot(ax=ax
+                    , color='white'
+                    , markersize=5
+                    , alpha=0.7
                         )
 
-ax = gdfComisariasIca.plot(ax=ax
-                           , markersize=50
-                           , color='blue'
-                           , alpha=0.9
-                           , zorder=3)
+gdfComisariasIca.plot(ax=ax
+                      , markersize=50
+                      , color='blue'
+                      , alpha=0.9
+                      , zorder=3)
 
 # Haciendo zoom a una zona
 ax.set_xlim([415000, 427591])
