@@ -1,5 +1,4 @@
 ## Publicando los mapas 
 
  - [My static map]()
- - [My interactive map](https://github.com/chlopezgis/articulos/blob/main/docs/maps/employment_rate_in_finland.html)
- 
+ - [My interactive map](https://chlopezgis.github.io/articulos/maps/employment_rate_in_finland.html)
