@@ -130,6 +130,9 @@ Coordenada Y:
 $y
 ```
 
+![image](https://user-images.githubusercontent.com/88239150/207875505-b963b755-cc3a-4ebc-8897-8119ae02ec30.png)
+
+
 2. **Coordenada del punto mas cercano**
 
 Coordenada x:
@@ -164,6 +167,9 @@ y(
  )
 ```
 
+![image](https://user-images.githubusercontent.com/88239150/207875634-7758aabd-aab3-4a69-9014-c6a8b0711e64.png)
+
+
 3. **Distancia mas corta**
 
 ```
@@ -175,3 +181,19 @@ ROUND(length(transform(make_line(
 		$geometry
 	),'EPSG:4326','EPSG:32718')),2)
 ```
+
+![image](https://user-images.githubusercontent.com/88239150/207875842-0b8433a6-aa01-40bf-8aed-1c24776fdd60.png)
+
+Finalmente:
+
+![image](https://user-images.githubusercontent.com/88239150/207876017-dc98de3f-c1f3-4ad6-9b32-97ddf437ab09.png)
+
+### Referencias:
+
+* [Expresiones QGIS](https://docs.qgis.org/3.10/es/docs/user_manual/working_with_vector/expression.html)
+
+### Contacto
+
+Elaborado por: Charlie Lopez Rengifo
+Correo: chlopezgis@gmail.com
+Cel: +51900502734
