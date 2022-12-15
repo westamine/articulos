@@ -194,6 +194,6 @@ Finalmente:
 
 ### Contacto
 
-Elaborado por: Charlie Lopez Rengifo
-Correo: chlopezgis@gmail.com
-Cel: +51900502734
+* Elaborado por: Charlie Lopez Rengifo
+* Correo: chlopezgis@gmail.com
+* Cel: +51900502734
