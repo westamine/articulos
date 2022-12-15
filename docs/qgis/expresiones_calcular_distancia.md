@@ -20,7 +20,7 @@ En propieddad de la capa `pois` ir a simbología, agregar una capa de simbolo y 
 
 Luego, pegar la siguiente `expresión` en la ventana de expresiones y Aceptar.
 
-```sql
+```
 closest_point(
 	array_first(overlay_nearest('Ciclovias', $geometry)), 
 	$geometry
@@ -38,7 +38,7 @@ Visualizamos los resultados:
 
 Nuevamente, en la capa de `pois` agregar una nueva de capa de simbolo, en el tipo de capa de simbolo seleccionar **`Generador de Geometría`** y en tipo de Geometría seleccionar la opción **`CadenaDeLinea/CadenaMultiLinea`**. Luego, pegar la siguiente `expresión` en la ventana de expresiones y Aceptar.
 
-```sql
+```
 make_line(
 	closest_point(
 		array_first(overlay_nearest('Ciclovias', $geometry)), 
@@ -64,7 +64,7 @@ Para las etiquetas, utilizaremos la opción de `Etiquetado basado en reglas`. Ut
 
 2. Etiqueta del punto mas cercano sobre la línea: En el **`valor`** seleccionar el campo `id`, en la pestaña de **`ubicación`** activar la opción de **`Generador de Geometría`** y pegar la siguiente **`expresión`**
 
-```sql
+```
 closest_point (
         array_first (
             overlay_nearest (
@@ -82,7 +82,7 @@ closest_point (
 
   	* En el **`valor`** pegar la siguiente **`expresión`**:
 
-	```sql
+	```
 	to_string(ROUND(length(transform(make_line(
 		closest_point(
 			array_first(overlay_nearest('Ciclovias', $geometry)), 
@@ -96,7 +96,7 @@ closest_point (
 
 	* En la pestaña de **`ubicación`** activar la opción de **`Generador de Geometría`** y pegar la siguiente **`expresión`**
 	
-	```sql
+	```
 	centroid(make_line(
 		closest_point(
 			array_first(overlay_nearest('Ciclovias', $geometry)), 
@@ -114,5 +114,64 @@ Visualizar los resultados:
 
 ## 3. Calculo de atributos
 
+Estas expresiones pueden ser utilizadas para calcular diferentes atributos, por ejemplo la coordenada del Punto, la coordenada del punto mas cercano y la distancia mas corta:
 
+1. **Coordenada del punto**
 
+Coordenada x:
+
+```
+$x
+```
+
+Coordenada Y:
+
+```
+$y
+```
+
+2. **Coordenada del punto mas cercano**
+
+Coordenada x:
+
+```
+x(
+	closest_point (
+		array_first (
+		    overlay_nearest (
+			'Ciclovias' , 
+			$geometry
+		    )
+		), 
+	    $geometry
+	    )
+ )
+```
+
+Coordenada Y:
+
+```
+y(
+	closest_point (
+		array_first (
+		    overlay_nearest (
+			'Ciclovias' , 
+			$geometry
+		    )
+		), 
+	    $geometry
+	    )
+ )
+```
+
+3. **Distancia mas corta**
+
+```
+ROUND(length(transform(make_line(
+		closest_point(
+			array_first(overlay_nearest('Ciclovias', $geometry)), 
+			$geometry
+			),
+		$geometry
+	),'EPSG:4326','EPSG:32718')),2)
+```
