@@ -50,13 +50,49 @@ make_line(
 
 ![image](https://user-images.githubusercontent.com/88239150/207870999-6bbd662d-a35a-4cc2-ba39-d382ef24d49e.png)
 
-Finalmente, visualizamos en resultado:
+Visualizamos el resultado:
 
 ![image](https://user-images.githubusercontent.com/88239150/207871246-07de4d7f-00a3-4a3a-b3c3-a753e877ca3d.png)
 
 
 ## 2. Etiquetado
 
+Para las etiquetas, utilizaremos la opción de `Etiquetado basado en reglas`. Utilizaremos 3 etiquetas:
+
+1. Etiqueta del punto original: En el **`valor`** seleccionar el campo `id`
+
+
+2. Etiqueta del punto mas cercano sobre la línea: En el **`valor`** seleccionar el campo `id`, en la pestaña de **`ubicación`** activar la opción de **`Generador de Geometría`** y pegar la siguiente **`expresión`**
+
+```sql
+closest_point (
+        array_first (
+            overlay_nearest (
+                'Ciclovias' , 
+                $geometry
+            )
+        ), 
+    $geometry
+    )
+```
+
+![image](https://user-images.githubusercontent.com/88239150/207872555-7fe43dc6-266f-40b3-88ec-1fbca6c23e90.png)
+
+3. Etiqueta de la distancia entre la capa `pois` y `ciclovias`:
+
+  * En el **`valor`** pegar la siguiente **`expresión`**:
+
+```sql
+to_string(ROUND(length(transform(make_line(
+	closest_point(
+		array_first(overlay_nearest('Ciclovias', $geometry)), 
+		$geometry
+		),
+	$geometry
+),'EPSG:4326','EPSG:32718')),2))||' m'
+```
+
+![image](https://user-images.githubusercontent.com/88239150/207873274-de0e734f-21c7-4223-9c68-e2afbec08141.png)
 
 
 ## 3. Calculo de atributos
