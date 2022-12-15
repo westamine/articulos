@@ -4,7 +4,7 @@
 
 Basada en datos de capa y funciones predefinidas o definidas por el usuario, las **expresiones** ofrecen una forma poderosa de manipular el valor del atributo, la geometría y las variables para cambiar dinámicamente el estilo de la geometría, el contenido o la posición de la etiqueta, seleccionar algunas entidades, calcular valores en un campo, etc.
 
-Para esete ejemplo buscaremos responder la siguiente pregunta realizada en un foro de GIS: **¿Es posible calcular la distancia mas contra entre un punto y una carretera?**
+Para este ejemplo buscaremos responder la siguiente pregunta realizada en un foro de GIS: **¿Es posible calcular la distancia mas contra entre un punto y una carretera?**
 
 ## Datos
 
