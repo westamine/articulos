@@ -80,9 +80,9 @@ closest_point (
 
 3. Etiqueta de la distancia entre la capa `pois` y `ciclovias`:
 
-  	* En el **`valor`** pegar la siguiente **`expresión`**:
+ * En el **`valor`** pegar la siguiente **`expresión`**:
 
-	```
+```
 	to_string(ROUND(length(transform(make_line(
 		closest_point(
 			array_first(overlay_nearest('Ciclovias', $geometry)), 
@@ -90,13 +90,13 @@ closest_point (
 			),
 		$geometry
 	),'EPSG:4326','EPSG:32718')),2))||' m'
-	```
+```
 
-	![image](https://user-images.githubusercontent.com/88239150/207873274-de0e734f-21c7-4223-9c68-e2afbec08141.png)
+![image](https://user-images.githubusercontent.com/88239150/207873274-de0e734f-21c7-4223-9c68-e2afbec08141.png)
 
-	* En la pestaña de **`ubicación`** activar la opción de **`Generador de Geometría`** y pegar la siguiente **`expresión`**
+* En la pestaña de **`ubicación`** activar la opción de **`Generador de Geometría`** y pegar la siguiente **`expresión`**
 	
-	```
+```
 	centroid(make_line(
 		closest_point(
 			array_first(overlay_nearest('Ciclovias', $geometry)), 
@@ -104,9 +104,9 @@ closest_point (
 			),
 		$geometry
 	))
-	```
+```
 	
-	![image](https://user-images.githubusercontent.com/88239150/207873811-4411c42e-d3a9-45ff-9f11-8b202b0c647d.png)
+![image](https://user-images.githubusercontent.com/88239150/207873811-4411c42e-d3a9-45ff-9f11-8b202b0c647d.png)
 
 Visualizar los resultados:
 
