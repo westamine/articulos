@@ -14,11 +14,11 @@ Para este ejemplo contamos con una capa de puntos de interes `pois` y una capa d
 
 ### 1.1. Visualizar el punto mas cercano de la capa de `pois` a la `ciclovía`
 
-En propieddad de la capa `pois` ir a simbología, agregar una simbología simple y en tipo de capa de simbolo seleccionar **`Generador de Geometría`** y en tipo de Geometría seleccionar la opción **`Punto/Multipunto`**
+En propieddad de la capa `pois` ir a simbología, agregar una capa de simbolo y en tipo de capa de simbolo seleccionar **`Generador de Geometría`** y en tipo de Geometría seleccionar la opción **`Punto/Multipunto`**
 
 ![image](https://user-images.githubusercontent.com/88239150/207869085-98665583-24dc-4420-8f0c-8a255b8e8a77.png)
 
-Luego, copiar la siguiente `expresión` en la ventana de expresiones y Aceptar.
+Luego, pegar la siguiente `expresión` en la ventana de expresiones y Aceptar.
 
 ```sql
 closest_point(
@@ -28,6 +28,31 @@ closest_point(
 ```
 
 ![image](https://user-images.githubusercontent.com/88239150/207869663-9672d7d9-c5c8-41f9-a01c-4e9e4b6f2ce7.png)
+
+Visualizamos los resultados:
+
+![image](https://user-images.githubusercontent.com/88239150/207870306-0eb04648-a939-43b8-a27b-f62a9fd278a5.png)
+
+
+### 1.2. Visualizar el segmento mas corto
+
+Nuevamente, en la capa de `pois` agregar una nueva de capa de simbolo, en el tipo de capa de simbolo seleccionar **`Generador de Geometría`** y en tipo de Geometría seleccionar la opción **`CadenaDeLinea/CadenaMultiLinea`**. Luego, pegar la siguiente `expresión` en la ventana de expresiones y Aceptar.
+
+```sql
+make_line(
+	closest_point(
+		array_first(overlay_nearest('Ciclovias', $geometry)), 
+		$geometry
+		),
+	$geometry
+)
+```
+
+![image](https://user-images.githubusercontent.com/88239150/207870999-6bbd662d-a35a-4cc2-ba39-d382ef24d49e.png)
+
+Finalmente, visualizamos en resultado:
+
+![image](https://user-images.githubusercontent.com/88239150/207871246-07de4d7f-00a3-4a3a-b3c3-a753e877ca3d.png)
 
 
 ## 2. Etiquetado
