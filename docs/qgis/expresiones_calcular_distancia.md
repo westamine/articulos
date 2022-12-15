@@ -18,6 +18,7 @@ En propieddad de la capa `pois` ir a simbología, agregar una simbología simple
 
 ![image](https://user-images.githubusercontent.com/88239150/207869085-98665583-24dc-4420-8f0c-8a255b8e8a77.png)
 
+Luego, copiar la siguiente `expresión` en la ventana de expresiones y Aceptar.
 
 ```sql
 closest_point(
@@ -25,6 +26,8 @@ closest_point(
 	$geometry
 )
 ```
+
+![image](https://user-images.githubusercontent.com/88239150/207869663-9672d7d9-c5c8-41f9-a01c-4e9e4b6f2ce7.png)
 
 
 ## 2. Etiquetado
