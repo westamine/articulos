@@ -1,4 +1,4 @@
-## Publicando los mapas 
+## Galeria de Mapas 
 
- - [My static map]()
- - [My interactive map](https://chlopezgis.github.io/articulos/maps/employment_rate_in_finland.html)
+ - [Mapa de anemia de Lima](https://chlopezgis.github.io/articulos/maps/mapa_anemia.html)
+
