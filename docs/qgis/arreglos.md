@@ -10,7 +10,7 @@ Para el desarrollo de los ejemplos se utilizarán los datos de `precipitación` 
 
 ![image](https://user-images.githubusercontent.com/88239150/227383279-d40efb07-ec98-4142-9617-1c967f5edf55.png)
 
-## Obtener el valor máximo de un arreglo
+## 1. Obtener el valor máximo de un arreglo
 
 Obtener el valor de la precipitación máxima del año:
 
@@ -36,13 +36,13 @@ Resultados:
 
 ![image](https://user-images.githubusercontent.com/88239150/227385052-080d31d4-10ea-49fd-bfea-ae5fe62a67cc.png)
 
-## Obtener el mes con la máxima precipitación
+## 2. Obtener el mes con la máxima precipitación
 
 Obtener la descripción del mes donde ocurre la precipitación máxima. 
 
 Para este ejemplo, utilizaremos la función **with_variable** que permite crear y establecer el valor de una variable para ser utilizado en un tercer argumento
 
-```
+```sql
 with_variable(nombre, valor, expresión)
 ```
 
@@ -52,9 +52,9 @@ Donde:
 * **valor**: El valor a establecer
 * **expresión**: La expresión para la cual la variable estará disponible
 
-Volviendo al ejemplo, la expresión a utilizar será la siguiente:
+En el ejemplo, la expresión a utilizar será la siguiente:
 
-```
+```sql
 with_variable(
 	-- nombre
 	'index_maxPrec',
@@ -92,18 +92,17 @@ Resultados:
 
 ![image](https://user-images.githubusercontent.com/88239150/227388453-7f7e03ca-1bc3-479d-89b6-b0341ff8ccc7.png)
 
-## Contar valores por un condición
+## 3. Contar valores por un condición
 
-```
+Contar cuantos meses 
+
+```sql
 with_variable(
 	'campos',
 	array(
 		"E","F","M","Ab","My","J",		  
 		"Jl","Ag","S","O","N","D"
 		),
-	(
-	  array_length(@campos) -
-	  array_count(@campos, 0)
-	)
+	array_length(@campos) - array_count(@campos, 0)
 )
 ```
