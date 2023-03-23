@@ -67,6 +67,7 @@ with_variable(
 		),
 		"maxPrec" --campo maxPrec calculado previamente
 	),
+
 	-- expresión
 	array_get(
 		array(
@@ -81,7 +82,7 @@ with_variable(
 Donde:
 
 * **index_maxPrec**: Nombre de la variable a establecer
-* **array_find**: Devuelve el índice (0 para el primero) de un valor dentro de un arreglo. Para este ejemplo, busca el valor del campo **`maxPrec`** devolviendo la posición dentro del arreglo especificado.
+* **array_find**: Devuelve el índice (0 para el primero) de un valor dentro de un arreglo. Para este ejemplo, busca el valor del campo **`maxPrec`** devolviendo la posición dentro del arreglo especificad y lo guarda en la variable **`index_maxPrec`**
 * **array_get**: Devuelve el valor "N" dentro de un arreglo en función del índice indicado
 
 Calculo:
@@ -94,15 +95,33 @@ Resultados:
 
 ## 3. Contar valores por un condición
 
-Contar cuantos meses 
+Para este ejemplo queremos contar cuantos campos de precipitación tienen valores con datos (diferentes de 0):
 
 ```sql
 with_variable(
+	-- nombre
 	'campos',
+	-- valor
 	array(
 		"E","F","M","Ab","My","J",		  
 		"Jl","Ag","S","O","N","D"
 		),
+	-- expresión
 	array_length(@campos) - array_count(@campos, 0)
 )
 ```
+
+Donde:
+
+* **campos**: Nombre de la variable a establecer
+* **array**: Arreglo con los valores de los meses del año que será el valor de la variable **`campos`**
+* **array_length**: Devuelve el número de elementos de un arreglo
+* **array_count**: Cuenta el número de ocurrencias de un valor dentro de un arreglo. Para este ejemplo, cuenta la cantidad de 0.
+
+Calculo:
+
+![image](https://user-images.githubusercontent.com/88239150/227390007-f732f73d-030e-49f4-bbbb-f0265963a7e2.png)
+
+Resultados:
+
+![image](https://user-images.githubusercontent.com/88239150/227390106-45f91d30-d272-4848-ac08-14c5b1526a12.png)
