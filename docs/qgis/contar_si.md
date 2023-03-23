@@ -9,10 +9,13 @@ Paso 1. Abrir la tabla de atributos
 ```
 with_variable(
 	'campos',
-	array("E","F","M","Ab","My","J",		  "Jl","Ag","S","O","N","D"),
+	array(
+		"E","F","M","Ab","My","J",		  
+		"Jl","Ag","S","O","N","D"
+		),
 	(
-	 array_length(@campos) -
-	 array_count(@campos, 0)
+	  array_length(@campos) -
+	  array_count(@campos, 0)
 	)
 )
 ```
