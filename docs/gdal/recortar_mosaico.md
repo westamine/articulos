@@ -80,7 +80,7 @@ gdalwarp -cutline D:\SHP\Ancash.shp -crop_to_cutline mosaico.vrt -dstnodata 9999
 
 <p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856960-6b534fe7-66e4-4c91-aded-b805cb3267a1.png"/></p>
 
-Una vez finalizado el proceso, tendremos como resultaod la imagen recortada y en formato TIF
+Una vez finalizado el proceso, tendremos como resultado la imagen enmascarada y en formato TIF
 
 <p align="center"><img src = "https://user-images.githubusercontent.com/88239150/190856909-cc7c0208-244f-45d2-bdad-6143e7bd9a85.png"/></p>
 
