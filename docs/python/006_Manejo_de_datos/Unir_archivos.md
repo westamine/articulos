@@ -1,4 +1,4 @@
-# Unir archivos
+# UNIR ARCHIVOS
 
 Para el siguiente ejemplo vamos a unir archivos espaciales en formato **`.json`** ubicados en directorios diferentes:
 
@@ -74,4 +74,14 @@ for archivo in archivos[0:5]:
 
 ![image](https://user-images.githubusercontent.com/88239150/228715547-42d89991-3575-41f1-bb25-2f251b16b357.png)
 
-## 3. Unir archivos
+## 3. Unión de los archivos
+
+Como siguiente paso vamos a recorrer todas las rutas, convertirlos en `GeoDataFrame` y concatenarlas en un solo `GeoDataFrame`
+
+```python
+# Bucle para recorrer todas las rutas, convertirlos en geodataframe y unirlas
+dfConsolidado = gpd.GeoDataFrame()
+for archivo in archivos:
+    df = gpd.read_file(archivo, encoding='UTF-8')
+    dfConsolidado = pd.concat([dfConsolidado, df])
+```
