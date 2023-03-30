@@ -45,13 +45,13 @@ Mediante el módulo **`glob`** buscaremos los nombres de rutas que se asemejan a
 ```python
 # Guardar la ruta de todos los archivos que terminen en .json
 # dentro del directorio "datos":
-archivos = glob.glob('datos/**/*.json', recursive=True)
+files = glob.glob('datos/**/*.json', recursive=True)
 ```
 
 Podemos verificar que la variable **`archivos`** es de tipo lista
 
 ```python
-type(archivos)
+type(files)
 ```
 
 ![image](https://user-images.githubusercontent.com/88239150/228715200-503d1cd8-2f05-4590-b20f-fe4a5290b8ac.png)
@@ -59,7 +59,7 @@ type(archivos)
 Tambien contaremos la cantidad de elementos que tiene la lista:
 
 ```python
-len(archivos)
+len(files)
 ```
 
 ![image](https://user-images.githubusercontent.com/88239150/228715316-412954d6-1dec-4bfb-874e-7107252fab10.png)
@@ -68,8 +68,8 @@ len(archivos)
 Y por último imprimiremos una muestra para verificar que los elementos guardados en la lista sean las rutas de los archivos **`.json`**
 
 ```python
-for archivo in archivos[0:5]:
-    print(archivo)
+for f in files[0:5]:
+    print(f)
 ```
 
 ![image](https://user-images.githubusercontent.com/88239150/228715547-42d89991-3575-41f1-bb25-2f251b16b357.png)
@@ -80,9 +80,7 @@ Como siguiente paso vamos a recorrer todas las rutas, convertirlos en `GeoDataFr
 
 ```python
 # Bucle para recorrer todas las rutas, convertirlos en geodataframe y unirlos
-dfConsolidado = gpd.GeoDataFrame()  # GeoDataFrame donde se almacenará el resultado
-for archivo in archivos:
-    df = gpd.read_file(archivo, encoding='UTF-8')
-    dfConsolidado = pd.concat([dfConsolidado, df])
+
 ```
 
+> **NOTA:** Tambien es factible usar compresión de listas, pero esta forma puede consumir mucha memoria al guardar todos los
