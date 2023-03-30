@@ -79,9 +79,10 @@ for archivo in archivos[0:5]:
 Como siguiente paso vamos a recorrer todas las rutas, convertirlos en `GeoDataFrame` y concatenarlas en un solo `GeoDataFrame`
 
 ```python
-# Bucle para recorrer todas las rutas, convertirlos en geodataframe y unirlas
-dfConsolidado = gpd.GeoDataFrame()
+# Bucle para recorrer todas las rutas, convertirlos en geodataframe y unirlos
+dfConsolidado = gpd.GeoDataFrame()  # GeoDataFrame donde se almacenará el resultado
 for archivo in archivos:
     df = gpd.read_file(archivo, encoding='UTF-8')
     dfConsolidado = pd.concat([dfConsolidado, df])
 ```
+
