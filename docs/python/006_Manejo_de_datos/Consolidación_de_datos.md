@@ -111,3 +111,6 @@ Finalmente, podemos exportar el resultado
 gdfResul.to_file('datos/catastro.gpkg', layer='predios', driver='GPKG')
 ```
 
+Visualizando en QGIS
+
+![image](https://user-images.githubusercontent.com/88239150/228725223-3f80786c-7d6f-47b9-9aff-84eda624a743.png)
