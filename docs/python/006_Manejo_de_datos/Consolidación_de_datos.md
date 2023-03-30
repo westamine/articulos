@@ -1,4 +1,4 @@
-# UNIR ARCHIVOS
+# CONSOLIDACIÓN DE DATOS
 
 Para el siguiente ejemplo vamos a unir archivos espaciales en formato **`.json`** ubicados en directorios diferentes:
 
@@ -104,14 +104,10 @@ gdfResul.head()
 
 ![image](https://user-images.githubusercontent.com/88239150/228719279-46f166db-d72e-4576-a63d-8161e6c5516a.png)
 
-Ver la capa sobre una mapa
-
-```python
-gdfResul.explore()
-```
 
 Finalmente, podemos exportar el resultado
 
 ```python
 gdfResul.to_file('datos/catastro.gpkg', layer='predios', driver='GPKG')
 ```
+
