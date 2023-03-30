@@ -62,8 +62,7 @@ Tambien contaremos la cantidad de elementos que tiene la lista:
 len(files)
 ```
 
-![image](https://user-images.githubusercontent.com/88239150/228715316-412954d6-1dec-4bfb-874e-7107252fab10.png)
-
+![image](https://user-images.githubusercontent.com/88239150/228717349-b8ae4350-fbca-40e6-a105-b6ba27c8ad64.png)
 
 Y por último imprimiremos una muestra para verificar que los elementos guardados en la lista sean las rutas de los archivos **`.json`**
 
