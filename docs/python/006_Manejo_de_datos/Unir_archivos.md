@@ -78,8 +78,18 @@ for f in files[0:5]:
 Como siguiente paso vamos a recorrer todas las rutas, convertirlos en `GeoDataFrame` y concatenarlas en un solo `GeoDataFrame`
 
 ```python
-# Bucle para recorrer todas las rutas, convertirlos en geodataframe y unirlos
+# GeoDataFrame que almacenará el resultado
+gdfResul = gpd.GeoDataFrame()
 
+# Bucle para recorrer todas las rutas, convertirlos en geodataframe 
+# y unirlas a gdfResul
+for f in files:
+    gdf = gpd.read_file(f, encoding='UTF-8')
+    gdfResul = pd.concat([gdfResul, gdf])   
 ```
 
-> **NOTA:** Tambien es factible usar compresión de listas, pero esta forma puede consumir mucha memoria al guardar todos los
+Podemos verificar la cantidad de registros y columnas
+
+```python
+gdf.shape
+```
